@@ -1,257 +1,152 @@
 <!DOCTYPE html>
 <html lang="km">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Khmer OS Content', 'Arial', sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-        
-        /* Header Styles */
-        header {
-            background: #35424a;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        
-        header h1 {
-            margin-bottom: 10px;
-        }
-        
-        /* Navigation */
-        nav {
-            background: #e8491d;
-            padding: 10px 0;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Main Content */
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            overflow: hidden;
-        }
-        
-        section {
-            padding: 20px;
-            margin-bottom: 20px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        
-        section h2 {
-            margin-bottom: 15px;
-            color: #35424a;
-            border-bottom: 2px solid #e8491d;
-            padding-bottom: 5px;
-        }
-        
-        /* About Section */
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 20px;
-            object-fit: cover;
-            border: 3px solid #e8491d;
-        }
-        
-        /* Projects Section */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .project {
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        
-        .project h3 {
-            margin-bottom: 10px;
-            color: #e8491d;
-        }
-        
-        .project a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #35424a;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        
-        .project a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Contact Section */
-        .contact-info {
-            margin-top: 15px;
-        }
-        
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-        
-        .contact-info a {
-            color: #e8491d;
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Footer */
-        footer {
-            background: #35424a;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav ul li {
-                margin: 5px 0;
-            }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-kh="ប្រវត្តិរូបសង្ខេប" data-lang-en="Portfolio">ប្រវត្តិរូបសង្ខេប</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 </head>
+
 <body>
+
+    <div class="lang-toggle" aria-label="Language toggle">
+        <button type="button" id="lang-toggle-btn" aria-pressed="true" aria-label="Switch language">
+            <img id="lang-flag" src="images/kh.svg" alt="khmer">
+            <span id="lang-label">ភាសាខ្មែរ</span>
+        </button>
+    </div>
+
     <header>
-        <h1>រ៉េត ទ្រី</h1>
-        <p>Full-Stack Developer</p>
+        <h1 id="name" data-lang-kh="រ៉េត ទ្រី" data-lang-en="Ret Try">រ៉េត ទ្រី</h1>
+        <p id="role" data-lang-kh="អ្នកអភិវឌ្ឍន៍ Full-Stack" data-lang-en="Full-Stack Developer">អ្នកអភិវឌ្ឍន៍
+            Full-Stack</p>
     </header>
-    
+
     <nav>
         <ul>
-            <li><a href="#about">អំពីខ្ញុំ</a></li>
-            <li><a href="#projects">ការងារ</a></li>
-            <li><a href="#skills">ជំនាញ</a></li>
-            <li><a href="#contact">ទំនាក់ទំនង</a></li>
+            <li><a href="#about" id="nav-about" data-lang-kh="អំពីខ្ញុំ" data-lang-en="About Me">អំពីខ្ញុំ</a></li>
+            <li><a href="#projects" id="nav-projects" data-lang-kh="ការងារ" data-lang-en="Projects">ការងារ</a></li>
+            <li><a href="#skills" id="nav-skills" data-lang-kh="ជំនាញ" data-lang-en="Skills">ជំនាញ</a></li>
+            <li><a href="#contact" id="nav-contact" data-lang-kh="ទំនាក់ទំនង" data-lang-en="Contact">ទំនាក់ទំនង</a></li>
         </ul>
     </nav>
-    
+
     <div class="container">
         <section id="about">
-            <h2>អំពីខ្ញុំ</h2>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0KhRLuBBP1irz1yWScTeLkptHnLLaqupNSQ&s" alt="Profile Image" class="profile-img">
-            <p>សួស្ដី ខ្ញុំឈ្មោះរ៉េត ទ្រី ខ្ញុំធ្វើផ្នែក Full-Stack Developer រយះពេលជិត៨ឆ្នាំហើយ បើគិតត្រឹមថ្ងៃទី០៨ ខែមករា ឆ្នាំ២០២៥។ ពេលទំនេរខ្ញុំចូលចិត្តសិក្សារស្រាវជ្រាវបច្ចេកវិទ្យាថ្មីៗ និងសិក្សារពីអ្វីដែលថ្មី ហើយសម្រាប់កីឡាខ្ញុំចូលចិត្តបាល់ទាស និងបាល់ទាត់។</p>
+            <h2 id="about-title" data-lang-kh="អំពីខ្ញុំ" data-lang-en="About Me">អំពីខ្ញុំ</h2>
+            <img src="images/profile.jpg" alt="" class="profile-img" />
+            <p id="about-paragraph"
+                data-lang-kh="សួស្ដី ខ្ញុំឈ្មោះរ៉េត ទ្រី ខ្ញុំធ្វើផ្នែក Full-Stack Developer រយះពេល៨ឆ្នាំហើយ បើគិតត្រឹមថ្ងៃទី០៨ ខែមករា ឆ្នាំ២០២៥។ ពេលទំនេរខ្ញុំចូលចិត្តសិក្សារស្រាវជ្រាវបច្ចេកវិទ្យាថ្មីៗ និងសិក្សារពីអ្វីដែលថ្មី ហើយសម្រាប់កីឡាខ្ញុំចូលចិត្តបាល់ទះ និងបាល់ទាត់។"
+                data-lang-en="Hi, I am Ret Try. I am a Full-Stack Developer with 8 years of experience as of 2025 January 8th . In my free time I enjoy learning new technologies, playing volleyball and football.">
+                សួស្ដី ខ្ញុំឈ្មោះរ៉េត ទ្រី ខ្ញុំធ្វើផ្នែក Full-Stack Developer រយះពេលជិត៨ឆ្នាំហើយ បើគិតត្រឹមថ្ងៃទី០៨
+                ខែមករា ឆ្នាំ២០២៥។ ពេលទំនេរខ្ញុំចូលចិត្តសិក្សារស្រាវជ្រាវបច្ចេកវិទ្យាថ្មីៗ និងសិក្សារពីអ្វីដែលថ្មី
+                ហើយសម្រាប់កីឡាខ្ញុំចូលចិត្តបាល់ទះ និងបាល់ទាត់។
+            </p>
         </section>
-        
+
         <section id="projects">
-            <h2>ការងារមួយចំនួនដែលខ្ញុំធ្លាប់ធ្វើ</h2>
+            <h2 id="projects-title" data-lang-kh="ការងារមួយចំនួនដែលខ្ញុំធ្លាប់ធ្វើ"
+                data-lang-en="Some Projects I Worked On">ការងារមួយចំនួនដែលខ្ញុំធ្លាប់ធ្វើ</h2>
             <div class="projects">
                 <div class="project">
-                    <h3>E-commerce Website</h3>
-                    <p>បង្កើតវែបសាយសម្រាប់លក់សំបុត្រកុន ដោយអ្នកប្រើប្រាស់អាចធ្វើការបង់ប្រាក់តាមរយះកម្មវិធីទូរស័ព្ទរបស់ធនាគាតាមរយះបាគង និង Visa និង Master Card ជាដើម។</p>
-                    <a href="https://primecineplex.com/" target="_blank">ចូលមើល</a>
+                    <h3 id="proj1-title" data-lang-kh="គេហទំព័រសម្រាប់លក់សំបុត្រកុន" data-lang-en="E-commerce Website">
+                        គេហទំព័រសម្រាប់លក់សំបុត្រកុន</h3>
+                    <p id="proj1-desc"
+                        data-lang-kh="បង្កើតគេហទំព័រសម្រាប់លក់សំបុត្រកុន ដោយអ្នកប្រើប្រាស់អាចធ្វើការបង់ប្រាក់តាមរយះកម្មវិធីទូរស័ព្ទរបស់ធនាគាតាមរយះបាគង Visa និង Master Card ជាដើម។"
+                        data-lang-en="Built an e-commerce site for ticket sales allowing payments via KHQR, Visa, MasterCard and other gateways.">
+                        បង្កើតគេហទំព័រសម្រាប់លក់សំបុត្រកុន
+                        ដោយអ្នកប្រើប្រាស់អាចធ្វើការបង់ប្រាក់តាមរយះកម្មវិធីទូរស័ព្ទរបស់ធនាគាតាមរយះបាគង Visa និង Master
+                        Card ជាដើម។
+                    </p>
+                    <a id="proj1-link" href="https://primecineplex.com/" target="_blank" data-lang-kh="ចូលមើល"
+                        data-lang-en="View">ចូលមើល</a>
                 </div>
+
                 <div class="project">
-                    <h3>កម្មវិធីទូរស័ព្ទដៃ</h3>
-                    <p>បង្កើតកម្មវិធីទូរស័ព្ទទាំង iOS និង Android សម្រាប់លក់សំបុត្រកុន ដោយអ្នកប្រើប្រាស់អាចធ្វើការបង់ប្រាក់តាមរយះកម្មវិធីទូរស័ព្ទរបស់ធនាគាតាមរយះបាគង និង Visa និង Master Card ជាដើម។</p>
-                    <a href="#">ចូលមើល</a>
+                    <h3 id="proj2-title" data-lang-kh="កម្មវិធីទូរស័ព្ទដៃ" data-lang-en="Mobile App">កម្មវិធីទូរស័ព្ទដៃ
+                    </h3>
+                    <p id="proj2-desc"
+                        data-lang-kh="បង្កើតកម្មវិធីទូរស័ព្ទទាំង iOS និង Android សម្រាប់លក់សំបុត្រកុន ដោយអ្នកប្រើប្រាស់អាចធ្វើការបង់ប្រាក់តាមរយះកម្មវិធីទូរស័ព្ទរបស់ធនាគាតាមរយះបាគង Visa និង Master Card ជាដើម។"
+                        data-lang-en="Developed iOS and Android apps for ticket sales with integrated payment flows.">
+                        បង្កើតកម្មវិធីទូរស័ព្ទទាំង iOS និង Android សម្រាប់លក់សំបុត្រកុន
+                        ដោយអ្នកប្រើប្រាស់អាចធ្វើការបង់ប្រាក់តាមរយះកម្មវិធីទូរស័ព្ទរបស់ធនាគាតាមរយះបាគង Visa និង Master
+                        Card ជាដើម។
+                    </p>
+                    <a id="proj2-link" href="#" data-lang-kh="ចូលមើល" data-lang-en="View">ចូលមើល</a>
                 </div>
+
                 <div class="project">
-                    <h3>Kiosk</h3>
-                    <p>បង្កើត Kiosk ដែលអនុញ្ញាតិអោយអ្នកប្រើប្រាស់ទូទៅអាចធ្វើការទិញសំបុត្រដោយទូទាត់តាមរយះ KHQR (បាគង) និងយកសំបុត្រកុនជាមួយម៉ាស៊ីននឹងបានដោយខ្លួនឯងផ្ទាល់។</p>
-                    <a href="#">ចូលមើល</a>
+                    <h3 id="proj3-title" data-lang-kh="Kiosk" data-lang-en="Kiosk">Kiosk</h3>
+                    <p id="proj3-desc"
+                        data-lang-kh="បង្កើត Kiosk ដែលអនុញ្ញាតិអោយអ្នកប្រើប្រាស់ទូទៅអាចធ្វើការទិញសំបុត្រដោយទូទាត់តាមរយះ KHQR (បាគង) និងយកសំបុត្រកុនជាមួយម៉ាស៊ីននឹងបានដោយខ្លួនឯងផ្ទាល់។"
+                        data-lang-en="Built a kiosk system allowing users to purchase tickets using KHQR and print tickets on-site.">
+                        បង្កើត Kiosk ដែលអនុញ្ញាតិអោយអ្នកប្រើប្រាស់ទូទៅអាចធ្វើការទិញសំបុត្រដោយទូទាត់តាមរយះ KHQR (បាគង)
+                        និងយកសំបុត្រកុនជាមួយម៉ាស៊ីននឹងបានដោយខ្លួនឯងផ្ទាល់។
+                    </p>
+                    <a id="proj3-link" href="#" data-lang-kh="ចូលមើល" data-lang-en="View">ចូលមើល</a>
                 </div>
+
                 <div class="project">
-                    <h3>POS System</h3>
-                    <p>បង្កើតប្រព័ន្ធសម្រាប់លក់សំបុត្រកុន និងអាហារភេសជ្ជៈដោយអនុញ្ញាតិអោយអ្នកប្រើប្រាស់អាចទូទាត់ជាសាច់ប្រាក់ ធនាគា (KHQR) ប័ណ្ណបញ្ចុះតម្លៃ QR Code បញ្ចុះតម្លៃ និងផ្សេងៗទៀត</p>
-                    <a href="#">ចូលមើល</a>
+                    <h3 id="proj4-title" data-lang-kh="ប្រព័ន្ធ POS" data-lang-en="POS System">ប្រព័ន្ធ POS</h3>
+                    <p id="proj4-desc"
+                        data-lang-kh="បង្កើតប្រព័ន្ធសម្រាប់លក់សំបុត្រកុន និងអាហារភេសជ្ជៈដោយអនុញ្ញាតិអោយអ្នកប្រើប្រាស់អាចទូទាត់ជាសាច់ប្រាក់ ធនាគា (KHQR) ប័ណ្ណបញ្ចុះតម្លៃ QR Code បញ្ចុះតម្លៃ និងផ្សេងៗទៀត"
+                        data-lang-en="Developed a POS system for ticket and concession sales with multiple payment support.">
+                        បង្កើតប្រព័ន្ធសម្រាប់លក់សំបុត្រកុន
+                        និងអាហារភេសជ្ជៈដោយអនុញ្ញាតិអោយអ្នកប្រើប្រាស់អាចទូទាត់ជាសាច់ប្រាក់ ធនាគា (KHQR) ប័ណ្ណបញ្ចុះតម្លៃ
+                        QR Code បញ្ចុះតម្លៃ និងផ្សេងៗទៀត
+                    </p>
+                    <a id="proj4-link" href="#" data-lang-kh="ចូលមើល" data-lang-en="View">ចូលមើល</a>
                 </div>
-            </div>
-        </section>
-        
-        <section id="skills">
-            <h2>ជំនាញ</h2>
-            <ul style="padding: 25px;">
-                <li>HTML5 & CSS3</li>
-                <li>JavaScript (ES6+)</li>
-                <li>Responsive Web Design</li>
-                <li>UI/UX Design Principles</li>
-                <li>C Programming</li>
-                <li>C++ Programming</li>
-                <li>C# Programming</li>
-                <li>Dart Programming</li>
-                <li>Flutter Framework</li>
-                <li>SQL Server</li>                
-                <li>Version Control (Git)</li>
-            </ul>
-        </section>
-        
-        <section id="contact">
-            <h2>ទំនាក់ទំនង</h2>
-            <div class="contact-info">
-                <p>សារអេឡិចត្រូនិច: <a href="mailto:trydev1995@gmail.com">trydev1995@gmail.com</a></p>
-                <p>លេខទូរស័ព្ទ: <a href="tel:+855967892018">(855) 967-892-018</a></p>
-                <p>LinkedIn: <a href="https://kh.linkedin.com/in/try-ret-b30943151" target="_blank">linkedin.com/in/try-ret-b30943151</a></p>
-                <p>GitHub: <a href="https://github.com/TryTec" target="_blank">github.com/TryTec</a></p>
             </div>
         </section>
 
-        <button id="gotop" style="position:fixed;bottom:40px;right:40px;padding:12px 20px;background:#e8491d;color:#fff;border:none;border-radius:50px;box-shadow:0 2px 8px rgba(0,0,0,0.15);font-size:18px;cursor:pointer;z-index:1000;transition:background 0.2s;">↑ Top</button>
-        <script>
-            const btn = document.getElementById('gotop');
-            btn.style.display = 'none';
-            window.addEventListener('scroll', () => {
-                btn.style.display = window.scrollY > 200 ? 'block' : 'none';
-            });
-            btn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
-        </script>
+        <section id="skills">
+            <h2 id="skills-title" data-lang-kh="ជំនាញ" data-lang-en="Skills">ជំនាញ</h2>
+            <ul id="skills-list">
+                <li data-lang-kh="HTML5" data-lang-en="HTML5">HTML5</li>
+                <li data-lang-kh="CSS3" data-lang-en="CSS3">CSS3</li>
+                <li data-lang-kh="JavaScript (ES6+)" data-lang-en="JavaScript (ES6+)">JavaScript (ES6+)</li>
+                <li data-lang-kh="ភាសា C" data-lang-en="C Programming">ភាសា C</li>
+                <li data-lang-kh="ភាសា C++" data-lang-en="C++ Programming">ភាសា C++</li>
+                <li data-lang-kh="ភាសា C#" data-lang-en="C# Programming">ភាសា C#</li>
+                <li data-lang-kh=".NET Framework" data-lang-en=".NET Framework">.NET Framework</li>
+                <li data-lang-kh="ASP.NET MVC" data-lang-en="ASP.NET MVC">ASP.NET MVC</li>
+                <li data-lang-kh="RESTful API" data-lang-en="RESTful API">RESTful API</li>
+                <li data-lang-kh="Dart" data-lang-en="Dart Programming">Dart</li>
+                <li data-lang-kh="Flutter" data-lang-en="Flutter Framework">Flutter</li>
+                <li data-lang-kh="UI/UX" data-lang-en="UI/UX">UI/UX</li>
+                <li data-lang-kh="SQL Server" data-lang-en="SQL Server">SQL Server</li>
+                <li data-lang-kh="Version Control (Git)" data-lang-en="Version Control (Git)">Version Control (Git)</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2 id="contact-title" data-lang-kh="ទំនាក់ទំនង" data-lang-en="Contact">ទំនាក់ទំនង</h2>
+            <div class="contact-info">
+                <p id="contact-email" data-lang-kh="សារអេឡិចត្រូនិច" data-lang-en="Email">សារអេឡិចត្រូនិច</p>
+                <p><a href="mailto:trydev1995@gmail.com">trydev1995@gmail.com</a></p>
+
+                <p id="contact-phone-label" data-lang-kh="លេខទូរស័ព្ទ" data-lang-en="Phone">លេខទូរស័ព្ទ</p>
+                <p><a href="tel:+855967892018">(855) 96-789-2018</a></p>
+
+                <p id="contact-linkedin-label" data-lang-kh="LinkedIn" data-lang-en="LinkedIn">LinkedIn</p>
+                <p><a href="https://kh.linkedin.com/in/try-ret-b30943151"
+                        target="_blank">linkedin.com/in/try-ret-b30943151</a></p>
+
+                <p id="contact-github-label" data-lang-kh="GitHub" data-lang-en="GitHub">GitHub</p>
+                <p><a href="https://github.com/TryTec" target="_blank">github.com/TryTec</a></p>
+            </div>
+        </section>
+
+        <button id="gotop" aria-label="Go to top" data-lang-kh="↑ ទៅលើ" data-lang-en="↑ Top">↑ Top</button>
     </div>
-    
+
     <footer>
-        <p>&copy; 2025 Ret Try. All rights reserved.</p>
+        <p id="footer-text" data-lang-kh="© 2025 រ៉េត ទ្រី. រក្សា​សិទ្ធិ​គ្រប់​យ៉ាង."
+            data-lang-en="© 2025 Ret Try. All rights reserved.">© 2025 រ៉េត ទ្រី. រក្សា​សិទ្ធិ​គ្រប់​យ៉ាង.</p>
     </footer>
 </body>
+
 </html>
