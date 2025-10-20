@@ -1,7 +1,7 @@
 /* Reset and Base Styles */
 @font-face {
     font-family: 'Nokora-Regular';
-    src: url('../fonts/Nokora-Regular.ttf') format('truetype');
+    src: url('fonts/Nokora-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
